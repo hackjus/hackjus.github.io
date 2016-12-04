@@ -154,6 +154,66 @@
       <div class="body-wrap">
         
   
+    <article id="post-js数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/29/js数组去重/">js数组去重</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><p>set 是一种数据结构，特点是没有重复的值，因此可以利用这个来处理<br>function unique(arr){<br>    return arr.form(new Set(arr));<br>}</p>
+<h3 id="首先最简单的一种"><a href="#首先最简单的一种" class="headerlink" title="首先最简单的一种"></a>首先最简单的一种</h3><pre><code>function unique(arr) {
+</code></pre><p>  var ret = []<br>  for (var i = 0; i &lt; arr.length; i++) {<br>    var item = arr[i]<br>    if (ret.indexOf(item) === -1) {<br>      ret.push(item)<br>    }<br>  }<br>  return ret<br>     } </p>
+<h3 id="核心是构建了一个-hash-对象来替代-indexOf-注意在-JavaScript-里，对象的键值只能是字符串，因此需要var-key-typeof-item-item-来区分数值-1-和字符串-‘1’-等情况。"><a href="#核心是构建了一个-hash-对象来替代-indexOf-注意在-JavaScript-里，对象的键值只能是字符串，因此需要var-key-typeof-item-item-来区分数值-1-和字符串-‘1’-等情况。" class="headerlink" title="核心是构建了一个 hash 对象来替代 indexOf. 注意在 JavaScript 里，对象的键值只能是字符串，因此需要var key = typeof(item) + item 来区分数值 1 和字符串 ‘1’ 等情况。"></a>核心是构建了一个 hash 对象来替代 indexOf. 注意在 JavaScript 里，对象的键值只能是字符串，因此需要var key = typeof(item) + item 来区分数值 1 和字符串 ‘1’ 等情况。</h3><p>function unique(arr) {<br>  var ret = []<br>  var hash = {}</p>
+<p>  for (var i = 0; i &lt; arr.length; i++) {<br>    var item = arr[i]<br>    var key = typeof(item) + item<br>    if (hash[key] !== 1) {<br>      ret.push(item)<br>      hash[key] = 1<br>    }<br>  }</p>
+<p>  return ret<br>}</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/29/js数组去重/" class="archive-article-date">
+  	<time datetime="2016-10-29T07:12:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-29</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Fisher-Yates-shuffle-洗牌算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,66 +321,6 @@
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js数组去重" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/js数组去重/">js数组去重</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><p>set 是一种数据结构，特点是没有重复的值，因此可以利用这个来处理<br>function unique(arr){<br>    return arr.form(new Set(arr));<br>}</p>
-<h3 id="首先最简单的一种"><a href="#首先最简单的一种" class="headerlink" title="首先最简单的一种"></a>首先最简单的一种</h3><pre><code>function unique(arr) {
-</code></pre><p>  var ret = []<br>  for (var i = 0; i &lt; arr.length; i++) {<br>    var item = arr[i]<br>    if (ret.indexOf(item) === -1) {<br>      ret.push(item)<br>    }<br>  }<br>  return ret<br>     } </p>
-<h3 id="核心是构建了一个-hash-对象来替代-indexOf-注意在-JavaScript-里，对象的键值只能是字符串，因此需要var-key-typeof-item-item-来区分数值-1-和字符串-‘1’-等情况。"><a href="#核心是构建了一个-hash-对象来替代-indexOf-注意在-JavaScript-里，对象的键值只能是字符串，因此需要var-key-typeof-item-item-来区分数值-1-和字符串-‘1’-等情况。" class="headerlink" title="核心是构建了一个 hash 对象来替代 indexOf. 注意在 JavaScript 里，对象的键值只能是字符串，因此需要var key = typeof(item) + item 来区分数值 1 和字符串 ‘1’ 等情况。"></a>核心是构建了一个 hash 对象来替代 indexOf. 注意在 JavaScript 里，对象的键值只能是字符串，因此需要var key = typeof(item) + item 来区分数值 1 和字符串 ‘1’ 等情况。</h3><p>function unique(arr) {<br>  var ret = []<br>  var hash = {}</p>
-<p>  for (var i = 0; i &lt; arr.length; i++) {<br>    var item = arr[i]<br>    var key = typeof(item) + item<br>    if (hash[key] !== 1) {<br>      ret.push(item)<br>      hash[key] = 1<br>    }<br>  }</p>
-<p>  return ret<br>}</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/29/js数组去重/" class="archive-article-date">
-  	<time datetime="2016-10-29T07:12:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-29</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
