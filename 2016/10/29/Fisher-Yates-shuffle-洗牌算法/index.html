@@ -8,31 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>洗牌算法 | 冯之扬的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Fisher -yates shuffle 洗牌算法简单的说这个算法就是用来将一个有限集合生成一个随机序列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效
-
-fisher -yates 的原始版本这个算法步骤如下：
-1.写下从1到n的数字
-2.取一个从 1 到剩下的数字（包括这个数字）的随机数 
-3.从低位开始，得到第 k 个数字（这个数字还没有被取出），把它写在独立">
+  <meta name="description" content="Fisher -yates shuffle 洗牌算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洗牌算法">
 <meta property="og:url" content="http://yoursite.com/2016/10/29/Fisher-Yates-shuffle-洗牌算法/index.html">
 <meta property="og:site_name" content="冯之扬的世界">
-<meta property="og:description" content="Fisher -yates shuffle 洗牌算法简单的说这个算法就是用来将一个有限集合生成一个随机序列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效
-
-fisher -yates 的原始版本这个算法步骤如下：
-1.写下从1到n的数字
-2.取一个从 1 到剩下的数字（包括这个数字）的随机数 
-3.从低位开始，得到第 k 个数字（这个数字还没有被取出），把它写在独立">
-<meta property="og:updated_time" content="2016-11-26T16:38:27.583Z">
+<meta property="og:description" content="Fisher -yates shuffle 洗牌算法">
+<meta property="og:updated_time" content="2016-12-04T14:13:02.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洗牌算法">
-<meta name="twitter:description" content="Fisher -yates shuffle 洗牌算法简单的说这个算法就是用来将一个有限集合生成一个随机序列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效
-
-fisher -yates 的原始版本这个算法步骤如下：
-1.写下从1到n的数字
-2.取一个从 1 到剩下的数字（包括这个数字）的随机数 
-3.从低位开始，得到第 k 个数字（这个数字还没有被取出），把它写在独立">
+<meta name="twitter:description" content="Fisher -yates shuffle 洗牌算法">
   
     <link rel="alternative" href="/atom.xml" title="冯之扬的世界" type="application/atom+xml">
   
@@ -186,7 +171,8 @@ fisher -yates 的原始版本这个算法步骤如下：
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Fisher-yates-shuffle-洗牌算法"><a href="#Fisher-yates-shuffle-洗牌算法" class="headerlink" title="Fisher -yates shuffle 洗牌算法"></a>Fisher -yates shuffle 洗牌算法</h2><p>简单的说这个算法就是用来将一个有限集合生成一个随机序列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效</p>
+        <h2 id="Fisher-yates-shuffle-洗牌算法"><a href="#Fisher-yates-shuffle-洗牌算法" class="headerlink" title="Fisher -yates shuffle 洗牌算法"></a>Fisher -yates shuffle 洗牌算法</h2><a id="more"></a>
+<p>简单的说这个算法就是用来将一个有限集合生成一个随机序列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效</p>
 <hr>
 <h2 id="fisher-yates-的原始版本"><a href="#fisher-yates-的原始版本" class="headerlink" title="fisher -yates 的原始版本"></a>fisher -yates 的原始版本</h2><p>这个算法步骤如下：</p>
 <p>1.写下从1到n的数字</p>
@@ -256,7 +242,8 @@ fisher -yates 的原始版本这个算法步骤如下：
 </tr>
 </tbody>
 </table>
-<h3 id="js代码演示"><a href="#js代码演示" class="headerlink" title="js代码演示"></a>js代码演示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.shuffle=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> that=<span class="keyword">this</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=that.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">    <span class="keyword">var</span> random=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(i+<span class="number">1</span>));</div><div class="line">    <span class="keyword">var</span> item=that[random];</div><div class="line">    that[random]=that[i];</div><div class="line">    that[i]=item;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> that;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffle</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> m = array.length, t, i;</div><div class="line"></div><div class="line">  <span class="comment">// While there remain elements to shuffle…</span></div><div class="line">  <span class="keyword">while</span> (m) &#123;</div><div class="line"></div><div class="line">    <span class="comment">// Pick a remaining element…</span></div><div class="line">    i = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * m--);</div><div class="line"></div><div class="line">    <span class="comment">// And swap it with the current element.</span></div><div class="line">    t = array[m];</div><div class="line">    array[m] = array[i];</div><div class="line">    array[i] = t;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> array;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="js代码演示"><a href="#js代码演示" class="headerlink" title="js代码演示"></a>js代码演示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.shuffle=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> that=<span class="keyword">this</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=that.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">    <span class="keyword">var</span> random=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(i+<span class="number">1</span>));</div><div class="line">    <span class="keyword">var</span> item=that[random];</div><div class="line">    that[random]=that[i];</div><div class="line">    that[i]=item;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> that;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffle</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">     <span class="keyword">var</span> m=arr.length,t,i;</div><div class="line">     <span class="keyword">while</span>(m)&#123;</div><div class="line">       i=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * m--)</div><div class="line">       <span class="comment">// swap the value</span></div><div class="line">       t = arr[m];</div><div class="line">       arr[m] = arr[i];</div><div class="line">       arr[i] = t;</div><div class="line">     &#125;</div><div class="line">     </div><div class="line">      <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -286,18 +273,9 @@ fisher -yates 的原始版本这个算法步骤如下：
   
 <nav id="article-nav">
   
-    <a href="/2016/10/29/js数组去重/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js数组去重
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/24/我对足球的理解/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我对足球的理解</div>
+    <a href="/2016/10/29/js数组去重/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js数组去重</div>
       <i class="icon-circle-right"></i>
     </a>
   

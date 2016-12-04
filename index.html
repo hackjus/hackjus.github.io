@@ -154,66 +154,6 @@
       <div class="body-wrap">
         
   
-    <article id="post-js数组去重" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/js数组去重/">js数组去重</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><p>set 是一种数据结构，特点是没有重复的值，因此可以利用这个来处理<br>function unique(arr){<br>    return arr.form(new Set(arr));<br>}</p>
-<h3 id="首先最简单的一种"><a href="#首先最简单的一种" class="headerlink" title="首先最简单的一种"></a>首先最简单的一种</h3><pre><code>function unique(arr) {
-</code></pre><p>  var ret = []<br>  for (var i = 0; i &lt; arr.length; i++) {<br>    var item = arr[i]<br>    if (ret.indexOf(item) === -1) {<br>      ret.push(item)<br>    }<br>  }<br>  return ret<br>     } </p>
-<h3 id="核心是构建了一个-hash-对象来替代-indexOf-注意在-JavaScript-里，对象的键值只能是字符串，因此需要var-key-typeof-item-item-来区分数值-1-和字符串-‘1’-等情况。"><a href="#核心是构建了一个-hash-对象来替代-indexOf-注意在-JavaScript-里，对象的键值只能是字符串，因此需要var-key-typeof-item-item-来区分数值-1-和字符串-‘1’-等情况。" class="headerlink" title="核心是构建了一个 hash 对象来替代 indexOf. 注意在 JavaScript 里，对象的键值只能是字符串，因此需要var key = typeof(item) + item 来区分数值 1 和字符串 ‘1’ 等情况。"></a>核心是构建了一个 hash 对象来替代 indexOf. 注意在 JavaScript 里，对象的键值只能是字符串，因此需要var key = typeof(item) + item 来区分数值 1 和字符串 ‘1’ 等情况。</h3><p>function unique(arr) {<br>  var ret = []<br>  var hash = {}</p>
-<p>  for (var i = 0; i &lt; arr.length; i++) {<br>    var item = arr[i]<br>    var key = typeof(item) + item<br>    if (hash[key] !== 1) {<br>      ret.push(item)<br>      hash[key] = 1<br>    }<br>  }</p>
-<p>  return ret<br>}</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/29/js数组去重/" class="archive-article-date">
-  	<time datetime="2016-10-29T07:12:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-29</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-Fisher-Yates-shuffle-洗牌算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -232,78 +172,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Fisher-yates-shuffle-洗牌算法"><a href="#Fisher-yates-shuffle-洗牌算法" class="headerlink" title="Fisher -yates shuffle 洗牌算法"></a>Fisher -yates shuffle 洗牌算法</h2><p>简单的说这个算法就是用来将一个有限集合生成一个随机序列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效</p>
-<hr>
-<h2 id="fisher-yates-的原始版本"><a href="#fisher-yates-的原始版本" class="headerlink" title="fisher -yates 的原始版本"></a>fisher -yates 的原始版本</h2><p>这个算法步骤如下：</p>
-<p>1.写下从1到n的数字</p>
-<p>2.取一个从 1 到剩下的数字（包括这个数字）的随机数 </p>
-<p>3.从低位开始，得到第 k 个数字（这个数字还没有被取出），把它写在独立的一个列表的最后一位</p>
-<p>4.重复第 2 步，直到所有的数字都被取出</p>
-<p>5.第 3 步写出的这个序列，现在就是原始数字的随机排列</p>
-<p>如果证明第二步取出的数字是真随机的，那么最后得到的排序也一定是</p>
-<h2 id="迭代步骤演示"><a href="#迭代步骤演示" class="headerlink" title="迭代步骤演示"></a>迭代步骤演示</h2><p>根据每次迭代次数可用下面的表格，描述这个算法执行过程            </p>
-<table>
-<thead>
-<tr>
-<th>随机数取值范围</th>
-<th style="text-align:left">随机数</th>
-<th>原始数据</th>
-<th>结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td style="text-align:left"></td>
-<td>1 2 3 4 5 6 7 8</td>
-<td></td>
-</tr>
-<tr>
-<td>1-8</td>
-<td style="text-align:left">6</td>
-<td>1234578</td>
-<td>6</td>
-</tr>
-<tr>
-<td>1-7</td>
-<td style="text-align:left">2</td>
-<td>1 73458</td>
-<td>26</td>
-</tr>
-<tr>
-<td>1-6</td>
-<td style="text-align:left">6</td>
-<td>17345</td>
-<td>826</td>
-</tr>
-<tr>
-<td>1-5</td>
-<td style="text-align:left">1</td>
-<td>5734</td>
-<td>1826</td>
-</tr>
-<tr>
-<td>1-4</td>
-<td style="text-align:left">3</td>
-<td>574</td>
-<td>3186</td>
-</tr>
-<tr>
-<td>1-3</td>
-<td style="text-align:left">3</td>
-<td>57</td>
-<td>43186</td>
-</tr>
-<tr>
-<td>1-3</td>
-<td style="text-align:left">1</td>
-<td>7</td>
-<td>5431826</td>
-</tr>
-</tbody>
-</table>
-<h3 id="js代码演示"><a href="#js代码演示" class="headerlink" title="js代码演示"></a>js代码演示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.shuffle=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> that=<span class="keyword">this</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=that.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">    <span class="keyword">var</span> random=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(i+<span class="number">1</span>));</div><div class="line">    <span class="keyword">var</span> item=that[random];</div><div class="line">    that[random]=that[i];</div><div class="line">    that[i]=item;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> that;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffle</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> m = array.length, t, i;</div><div class="line"></div><div class="line">  <span class="comment">// While there remain elements to shuffle…</span></div><div class="line">  <span class="keyword">while</span> (m) &#123;</div><div class="line"></div><div class="line">    <span class="comment">// Pick a remaining element…</span></div><div class="line">    i = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * m--);</div><div class="line"></div><div class="line">    <span class="comment">// And swap it with the current element.</span></div><div class="line">    t = array[m];</div><div class="line">    array[m] = array[i];</div><div class="line">    array[i] = t;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> array;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        <h2 id="Fisher-yates-shuffle-洗牌算法"><a href="#Fisher-yates-shuffle-洗牌算法" class="headerlink" title="Fisher -yates shuffle 洗牌算法"></a>Fisher -yates shuffle 洗牌算法</h2>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/10/29/Fisher-Yates-shuffle-洗牌算法/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -339,7 +211,7 @@
 
 
   
-    <article id="post-我对足球的理解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js数组去重" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -349,7 +221,64 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/24/我对足球的理解/">我对足球的理解</a>
+      <a class="article-title" href="/2016/10/29/js数组去重/">js数组去重</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js数组去重<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/10/29/js数组去重/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/29/js数组去重/" class="archive-article-date">
+  	<time datetime="2016-10-29T07:12:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-29</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-some small thought" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/24/some small thought/">我对足球的理解</a>
     </h1>
   
 
@@ -363,7 +292,7 @@
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/24/我对足球的理解/" class="archive-article-date">
+      <a href="/2016/10/24/some small thought/" class="archive-article-date">
   	<time datetime="2016-10-24T12:11:48.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-24</time>
 </a>
       
