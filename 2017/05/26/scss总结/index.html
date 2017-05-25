@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>冯之扬的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SCSS用法">
+  <meta name="description" content="123title: &amp;apos;&amp;apos;&amp;apos;Scss总结&amp;apos;&amp;apos;&amp;apos;date: 2017-05-26 04:27:22tags:  前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冯之扬的世界">
 <meta property="og:url" content="http://yoursite.com/2017/05/26/scss总结/index.html">
 <meta property="og:site_name" content="冯之扬的世界">
-<meta property="og:description" content="SCSS用法">
-<meta property="og:updated_time" content="2017-05-25T20:12:33.388Z">
+<meta property="og:description" content="123title: &amp;apos;&amp;apos;&amp;apos;Scss总结&amp;apos;&amp;apos;&amp;apos;date: 2017-05-26 04:27:22tags:  前端">
+<meta property="og:updated_time" content="2017-05-25T20:30:31.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="冯之扬的世界">
-<meta name="twitter:description" content="SCSS用法">
+<meta name="twitter:description" content="123title: &amp;apos;&amp;apos;&amp;apos;Scss总结&amp;apos;&amp;apos;&amp;apos;date: 2017-05-26 04:27:22tags:  前端">
   
     <link rel="alternative" href="/atom.xml" title="冯之扬的世界" type="application/atom+xml">
   
@@ -161,7 +161,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SCSS用法"><a href="#SCSS用法" class="headerlink" title="SCSS用法"></a>SCSS用法</h1><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="什么是SCSS"><a href="#什么是SCSS" class="headerlink" title="什么是SCSS"></a>什么是SCSS</h2><p>定义了一种新的专门的编程语言，编译后成正常的CSS文件，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: &apos;&apos;&apos;Scss总结&apos;&apos;&apos;</div><div class="line">date: 2017-05-26 04:27:22</div><div class="line">tags:  前端</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="SCSS用法"><a href="#SCSS用法" class="headerlink" title="SCSS用法"></a>SCSS用法</h1><h2 id="什么是SCSS"><a href="#什么是SCSS" class="headerlink" title="什么是SCSS"></a>什么是SCSS</h2><p>定义了一种新的专门的编程语言，编译后成正常的CSS文件，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。</p>
 <p>css预处理器语言。</p>
 <p>本文总结了SASS的主要用法。我的目标是，有了这篇文章，日常的一般使用就不需要去看<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="external">官方文档</a></p>
 <p>了。</p>
@@ -192,7 +194,7 @@
 <p>.tips: 文件路径不能带有中文。</p>
 <p>SASS的官方网站，提供了一个<a href="http://sass-lang.com/try.html" target="_blank" rel="external">在线转换器</a>。你可以在那里，试运行下面的各种例子。</p>
 <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>SASS使用变量，所有变量以$开头.</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$fontSize</span> : <span class="number">3rem</span>;　　　</div><div class="line"><span class="selector-tag">div</span> &#123;　　　</div><div class="line">  <span class="attribute">color</span> : <span class="variable">$fontSize</span>;　　</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$fontSize</span> : <span class="number">3rem</span>;　　　</div><div class="line"><span class="selector-tag">div</span> &#123;　　　</div><div class="line">  <span class="attribute">color</span> : <span class="variable">$fontSize</span>;　　&#125;</div></pre></td></tr></table></figure>
 <h4 id="普通变量和默认变量"><a href="#普通变量和默认变量" class="headerlink" title="普通变量和默认变量"></a>普通变量和默认变量</h4><ul>
 <li>普通变量声明后可以在全局范围内使用；</li>
 <li>默认变量仅需在值后面加上!default 即可；</li>
@@ -207,6 +209,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$color:green;//全局变量</div><div class="line">$width:200px;//全局变量</div><div class="line">$height:200px;//全局变量</div><div class="line">body &#123;</div><div class="line">  background-color:$color;//调用全局变量</div><div class="line">&#125;</div><div class="line">div &#123;</div><div class="line">  $color:yellow;//定义局部变量，全局变量$color的影子</div><div class="line">  .div &#123;</div><div class="line">  background-color:$color;//调用局部变量</div><div class="line">  width:$width;//调用全局变量</div><div class="line">  height:$height;//调用全局变量</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$fontSize</span> : <span class="number">3rem</span>;　</div><div class="line">　　<span class="selector-tag">div</span> &#123;</div><div class="line">　　　<span class="attribute">color</span> : <span class="variable">$fontSize</span>;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
 <p>如果变量需要嵌套在字符串中，就必须需要写在#{}中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　$side : left;</div><div class="line">　　.rounded &#123;</div><div class="line">　　　　border-#&#123;$side&#125;-radius: 5px;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
 <h2 id="计算功能"><a href="#计算功能" class="headerlink" title="计算功能"></a>计算功能</h2><p>sass可以在代码中直接使用算式：</p>
